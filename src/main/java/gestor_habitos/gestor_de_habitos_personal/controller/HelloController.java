@@ -8,6 +8,6 @@ public class HelloController {
 
     @GetMapping ("/")
     public String home() {
-        return "Hola! La app funciona";
+        return "Hola! La app funciona y ya tenemos models, enums y repository. Service en camino!";
     }
 }
