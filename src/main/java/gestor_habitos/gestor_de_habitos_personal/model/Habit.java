@@ -12,14 +12,14 @@ public class Habit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
-    private String nameHabit; // nombre de la tarea
+    private String habitname; // nombre de la tarea
 
     private String description; // especificamente en qué consiste, medible para saber cuando hecha y cuando no
 
     @Enumerated(EnumType.STRING)
-    private TaskCategory category; // Enum que define la categoria del habito
+    private TaskCategory taskCategory; // Enum que define la categoria del habito
 
     @Enumerated(EnumType.STRING)
     private TaskFrecuency taskFrecuency; // enum para ver cada cuanto se repite
@@ -37,11 +37,11 @@ public class Habit {
     public Habit() {
     }
 
-    public Habit(int id, String nameHabit, String description, TaskCategory category, TaskFrecuency taskFrecuency, boolean isActive, LocalDate dateOfStart, boolean taskFinished, User usuario) {
+    public Habit(long id, String habitname, String description, TaskCategory taskCategory, TaskFrecuency taskFrecuency, boolean isActive, LocalDate dateOfStart, boolean taskFinished, User usuario) {
         this.id = id;
-        this.nameHabit = nameHabit;
+        this.habitname = habitname;
         this.description = description;
-        this.category = category;
+        this.taskCategory = taskCategory;
         this.taskFrecuency = taskFrecuency;
         this.isActive = isActive;
         this.dateOfStart = dateOfStart;
@@ -49,20 +49,20 @@ public class Habit {
         this.usuario = usuario;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getNameHabit() {
-        return nameHabit;
+    public String getHabitname() {
+        return habitname;
     }
 
-    public void setNameHabit(String nameHabit) {
-        this.nameHabit = nameHabit;
+    public void setHabitname(String habitname) {
+        this.habitname = habitname;
     }
 
     public String getDescription() {
@@ -73,12 +73,12 @@ public class Habit {
         this.description = description;
     }
 
-    public TaskCategory getCategory() {
-        return category;
+    public TaskCategory getTaskCategory() {
+        return taskCategory;
     }
 
-    public void setCategory(TaskCategory category) {
-        this.category = category;
+    public void setTaskCategory(TaskCategory taskCategory) {
+        this.taskCategory = taskCategory;
     }
 
     public TaskFrecuency getTaskFrecuency() {

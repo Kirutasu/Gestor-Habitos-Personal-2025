@@ -11,9 +11,9 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
-    private String nameUser; //
+    private String username; //
 
     private String email; // para identificarlo
 
@@ -27,29 +27,29 @@ public class User {
     public User() {
     }
 
-    public User(int id, String nameUser, String email, String password, LocalDate fechaRegistro, List<Habit> listaHabitosUsuario) {
+    public User(long id, String username, String email, String password, LocalDate fechaRegistro, List<Habit> listaHabitosUsuario) {
         this.id = id;
-        this.nameUser = nameUser;
+        this.username = username;
         this.email = email;
         this.password = password;
         this.fechaRegistro = fechaRegistro;
         this.listaHabitosUsuario = listaHabitosUsuario;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getNameUser() {
-        return nameUser;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNameUser(String nameUser) {
-        this.nameUser = nameUser;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
